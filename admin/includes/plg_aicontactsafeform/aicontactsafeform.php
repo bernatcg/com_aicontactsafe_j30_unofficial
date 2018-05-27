@@ -140,7 +140,7 @@ class plgContentAiContactSafeForm extends JPlugin {
 						// set the return link to the current url or the one set into the profile
 						$postData['return_to'] = $this->getProfileReturnTo($parameters['pf']);
 					}
-					$postData[JUtility::getToken()] = 1;
+					$postData[JSession::getFormToken()] = 1;
 					$session = JFactory::getSession();
 					$session->set( 'postData:message_' . $r_id, $postData );
 					$session->set( 'parameters:message_' . $r_id, $postData );
